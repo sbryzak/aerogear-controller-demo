@@ -24,11 +24,8 @@ public class Register {
 
     public AeroGearUser register(User user) {
 
-        System.out.println("User: " + user.getId());
-//        idm.grant("admin").to(user);
-//
-//        boolean logged = authenticationManager.login(user.getUsername(), user.getPassword());
-//        System.out.println("Registered? " + logged);
+        idm.grant("admin").to(user);
+        boolean logged = authenticationManager.login(user.getId(), user.getPassword());
         return user;
     }
 }
