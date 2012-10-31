@@ -16,7 +16,6 @@
  */
 package org.jboss.aerogear.controller.demo.rest;
 
-import javax.enterprise.context.RequestScoped;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -27,13 +26,12 @@ import javax.ws.rs.core.MediaType;
  * <p/>
  * This class produces a RESTful service to read/write the contents of the members table.
  */
-@Path("/members")
-@RequestScoped
+@Path("/")
 public class MemberService {
 
-    @Path("/meh")
     @GET
-    @Produces(MediaType.TEXT_PLAIN)
+    @Path("/meh")
+    @Produces({ "application/json" })
     public String meh() {
         return "meh";
     }
