@@ -5,7 +5,7 @@
 
     <groupId>org.jboss.aerogear</groupId>
     <artifactId>aerogear-controller-demo</artifactId>
-    <version>1.0.0.M1-20121107</version>
+    <version>1.0.0.M1-SNAPSHOT</version>
     <packaging>war</packaging>
     <name>AeroGear Controller Demo</name>
 
@@ -28,6 +28,7 @@
         <!-- Define the version of JBoss' Java EE 6 APIs we want to import. Any dependencies from org.jboss.spec will have their
              version defined by this BOM -->
         <javaee6.bom.version>1.0.0.M3</javaee6.bom.version>
+        <uberfire.version>0.2.0-SNAPSHOT</uberfire.version>
     </properties>
 
     <dependencyManagement>
@@ -41,11 +42,11 @@
             version of JUnit and TestNG recommended for use with Arquillian.
             see https://github.com/jboss/jboss-bom/tree/master/jboss-javaee-6.0-with-tools -->
             <dependency>
-               <groupId>org.jboss.bom</groupId>
-               <artifactId>jboss-javaee-6.0-with-tools</artifactId>
-               <version>${javaee6.bom.version}</version>
-               <type>pom</type>
-               <scope>import</scope>
+                <groupId>org.jboss.bom</groupId>
+                <artifactId>jboss-javaee-6.0-with-tools</artifactId>
+                <version>${javaee6.bom.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -79,29 +80,27 @@
         <!-- Import the JAX-RS API, we use provided scope as the API is included
             in JBoss AS 7 -->
         <dependency>
-            <groupId>org.jboss.spec.javax.ws.rs</groupId>
-            <artifactId>jboss-jaxrs-api_1.1_spec</artifactId>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
             <groupId>org.jboss.aerogear</groupId>
             <artifactId>aerogear-controller</artifactId>
             <version>0.0.4.M6-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>
-        <dependency>
-            <groupId>org.jboss.aerogear</groupId>
-            <artifactId>aerogear-security</artifactId>
-            <version>1.0.0.M1-20121107</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.jboss.aerogear</groupId>
-            <artifactId>aerogear-security-picketbox</artifactId>
-            <version>1.0.0.M1-20121107</version>
-            <scope>compile</scope>
-        </dependency>
 
+        <dependency>
+            <groupId>org.uberfire</groupId>
+            <artifactId>security-api</artifactId>
+            <version>${uberfire.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.uberfire</groupId>
+            <artifactId>uberfire-server</artifactId>
+            <version>${uberfire.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.uberfire</groupId>
+            <artifactId>security-server</artifactId>
+            <version>${uberfire.version}</version>
+        </dependency>
         <!-- Import the JPA API, we use provided scope as the API is included
       in JBoss -->
         <dependency>
@@ -114,7 +113,7 @@
     <build>
         <!-- Set the name of the war, used as the context root when the app
       is deployed -->
-      <finalName>${project.artifactId}</finalName>
+        <finalName>${project.artifactId}</finalName>
         <plugins>
             <plugin>
                 <artifactId>maven-war-plugin</artifactId>
