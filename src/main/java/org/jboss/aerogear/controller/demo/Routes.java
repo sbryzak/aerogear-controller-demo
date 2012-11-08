@@ -54,6 +54,18 @@ public class Routes extends AbstractRoutingModule {
                 .on(RequestMethod.POST)
                 .to(Home.class).save(param(Car.class));
         route()
+                .from("/login")
+                .on(RequestMethod.GET)
+                .to(Login.class).index();
+        route()
+                .from("/login")
+                .on(RequestMethod.POST)
+                .to(Login.class).login(param(AeroGearUser.class));
+        route()
+                .from("/logout")
+                .on(RequestMethod.GET)
+                .to(Login.class).logout();
+        route()
                 .from("/register")
                 .on(RequestMethod.GET)
                 .to(Register.class).index();
