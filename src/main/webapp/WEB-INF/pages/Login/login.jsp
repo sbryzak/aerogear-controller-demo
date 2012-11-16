@@ -27,8 +27,18 @@
         hello ${aeroGearUser.id} to the authentication page!
         <p> <a href="logout">Logout</a></p>
     </div>
-    <p> <a href="otp">Try Google authenticator</a></p>
-    <div id="qrcode-div"></div>
-    <div id="val"></div>
+    <div class="sixteen columns">
+        <h2>Try Google authenticator</h2>
+        <hr />
+        <div id="qrcode-div"></div>
+
+        <form action="otp" method="post">
+            <label>OTP:</label>
+            <input type="text" name="aeroGearUser.otp"/>
+            <input type="submit"/>
+
+        </form>
+
+    </div>
 </div>
 <jsp:include page="../../template/footer.jsp" />
