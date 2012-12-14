@@ -44,7 +44,7 @@ public class Routes extends AbstractRoutingModule {
                 .to(Error.class).security();
         route()
                 .on(Exception.class)
-                .to(Error.class).index(param(Exception.class));
+                .to(Error.class).throwException();
         route()
                 .from("/")
                 .on(RequestMethod.GET)
@@ -56,7 +56,7 @@ public class Routes extends AbstractRoutingModule {
         route()
                 .from("/cars")
                 .on(RequestMethod.POST)
-                .to(Home.class).save(param(Car.class));
+                .to(Home.class).save(formParam(Car.class));
         route()
                 .from("/login")
                 .on(RequestMethod.GET)
@@ -64,11 +64,11 @@ public class Routes extends AbstractRoutingModule {
         route()
                 .from("/login")
                 .on(RequestMethod.POST)
-                .to(Login.class).login(param(AeroGearUser.class));
+                .to(Login.class).login(formParam(AeroGearUser.class));
         route()
                 .from("/otp")
                 .on(RequestMethod.POST)
-                .to(Otp.class).otp(param(AeroGearUser.class));
+                .to(Otp.class).otp(formParam(AeroGearUser.class));
         route()
                 .from("/logout")
                 .on(RequestMethod.GET)
@@ -80,7 +80,7 @@ public class Routes extends AbstractRoutingModule {
         route()
                 .from("/register")
                 .on(RequestMethod.POST)
-                .to(Register.class).register(param(AeroGearUser.class));
+                .to(Register.class).register(formParam(AeroGearUser.class));
 
         route()
                 .from("/throwException")
