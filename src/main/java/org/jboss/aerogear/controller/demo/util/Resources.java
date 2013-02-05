@@ -17,11 +17,8 @@
 package org.jboss.aerogear.controller.demo.util;
 
 import javax.enterprise.inject.Produces;
-import javax.enterprise.inject.spi.InjectionPoint;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.PersistenceContextType;
-import java.util.logging.Logger;
 
 /**
  * This class uses CDI to alias Java EE resources, such as the persistence context, to CDI beans
@@ -38,16 +35,7 @@ import java.util.logging.Logger;
 public class Resources {
 
     @SuppressWarnings("unused")
-    @PersistenceContext(unitName = "picketbox-default", type = PersistenceContextType.EXTENDED)
+    @Produces
+    @PersistenceContext
     private EntityManager entityManager;
-
-    @Produces
-    public Logger produceLog(InjectionPoint injectionPoint) {
-        return Logger.getLogger(injectionPoint.getMember().getDeclaringClass().getName());
-    }
-
-    @Produces
-    public EntityManager produceEntityManager() {
-        return entityManager;
-    }
 }
