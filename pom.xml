@@ -47,9 +47,9 @@
         <javaee6.bom.version>1.0.0.Final</javaee6.bom.version>
 
         <!-- Define the version of AeroGear APIs we want to import -->
-        <aerogear.controller.version>1.0.0.CR1-SNAPSHOT</aerogear.controller.version>
-        <aerogear.security.picketbox.version>1.0.0.CR1-SNAPSHOT</aerogear.security.picketbox.version>
-        <aerogear.otp.version>1.0.0.CR1-SNAPSHOT</aerogear.otp.version>
+        <aerogear.controller.version>1.0.0.M8</aerogear.controller.version>
+        <aerogear.security.picketbox.version>1.0.0.M8</aerogear.security.picketbox.version>
+        <aerogear.otp.version>1.0.0.M8</aerogear.otp.version>
         <!-- Define the version of PicketLink APIs we want to import -->
         <picketlink.version>3.0.0-SNAPSHOT</picketlink.version>
     </properties>
@@ -100,6 +100,12 @@
         <dependency>
             <groupId>org.picketlink</groupId>
             <artifactId>picketlink-idm-impl</artifactId>
+            <version>${picketlink.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.picketlink</groupId>
+            <artifactId>picketlink-idm-schema</artifactId>
             <version>${picketlink.version}</version>
         </dependency>
 
