@@ -16,6 +16,7 @@
  */
 package org.jboss.aerogear.controller.demo;
 
+import org.jboss.aerogear.controller.demo.model.AeroGearUser;
 import org.jboss.aerogear.controller.router.AbstractRoutingModule;
 import org.jboss.aerogear.controller.router.RequestMethod;
 
@@ -40,6 +41,15 @@ public class Routes extends AbstractRoutingModule {
                 .from("/")
                 .on(RequestMethod.GET)
                 .to(Home.class).index();
+
+        route()
+                .from("/login")
+                .on(RequestMethod.GET)
+                .to(Login.class).index();
+        route()
+                .from("/login")
+                .on(RequestMethod.POST)
+                .to(Login.class).login(param(AeroGearUser.class));
 
     }
 }
