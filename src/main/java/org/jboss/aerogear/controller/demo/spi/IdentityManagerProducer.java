@@ -30,7 +30,7 @@ public class IdentityManagerProducer {
         
     }
 
-    @Produces @AeroGear
+    @Produces @Aerogear
     public IdentityManager createIdentityManager(EntityManager entityManager) {
         
         

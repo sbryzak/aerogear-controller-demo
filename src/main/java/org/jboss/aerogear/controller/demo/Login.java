@@ -19,6 +19,8 @@ package org.jboss.aerogear.controller.demo;
 
 import org.jboss.aerogear.controller.demo.model.AeroGearUser;
 import org.picketlink.Identity;
+import org.picketlink.Identity.AuthenticationResult;
+import org.picketlink.authentication.Authenticator.AuthenticationStatus;
 import org.picketlink.credential.internal.DefaultLoginCredentials;
 import org.picketlink.idm.credential.internal.Password;
 import org.picketlink.idm.credential.internal.UsernamePasswordCredentials;
@@ -43,9 +45,14 @@ public class Login {
     }
 
     public AeroGearUser login(AeroGearUser user) {
-        credentials.setCredential(new UsernamePasswordCredentials(user.getUsername(), new Password(user.getPassword())));
-        identity.login();
-        return user;
+        credentials.setUserId(user.getUsername());
+        credentials.setCredential(new Password(user.getPassword())); //UsernamePasswordCredentials(user.getUsername(), new Password(user.getPassword())));
+        if (AuthenticationResult.SUCCESS == identity.login()) {
+            return user;
+        } else {
+            throw new RuntimeException("Authentication failed!");
+        }
+        
     }
 
     public void logout() {
