@@ -1,4 +1,4 @@
-package org.jboss.aerogear.controller.demo.util;
+package org.jboss.aerogear.controller.demo.spi;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;

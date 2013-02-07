@@ -1,7 +1,6 @@
-package org.jboss.aerogear.controller.demo.util;
+package org.jboss.aerogear.controller.demo.spi;
 
 import javax.enterprise.context.ApplicationScoped;
-import javax.enterprise.context.RequestScoped;
 import javax.enterprise.inject.Produces;
 import javax.persistence.EntityManager;
 
@@ -9,7 +8,6 @@ import org.picketlink.idm.IdentityManager;
 import org.picketlink.idm.config.IdentityConfiguration;
 import org.picketlink.idm.config.IdentityStoreConfiguration;
 import org.picketlink.idm.internal.DefaultIdentityManager;
-import org.picketlink.idm.internal.DefaultIdentityStoreInvocationContextFactory;
 import org.picketlink.idm.jpa.internal.JPAIdentityStoreConfiguration;
 import org.picketlink.idm.jpa.schema.CredentialObject;
 import org.picketlink.idm.jpa.schema.CredentialObjectAttribute;
@@ -32,7 +30,7 @@ public class IdentityManagerProducer {
         
     }
 
-    @Produces @Aerogear 
+    @Produces @AeroGear
     public IdentityManager createIdentityManager(EntityManager entityManager) {
         
         
