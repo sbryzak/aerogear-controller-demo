@@ -1,4 +1,4 @@
-package org.jboss.aerogear.controller.demo.util;
+package org.jboss.aerogear.controller.demo.spi;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -10,6 +10,6 @@ import javax.inject.Qualifier;
 @Qualifier
 @Target({ElementType.FIELD, ElementType.METHOD, ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
-public @interface Aerogear {
+public @interface AeroGear {
 
 }

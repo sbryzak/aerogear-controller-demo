@@ -36,14 +36,14 @@ public class Login {
     private Identity identity;
 
     @Inject
-    private DefaultLoginCredentials loginCredentials;
+    private DefaultLoginCredentials credentials;
 
     public void index() {
         LOGGER.info("Login page!");
     }
 
     public AeroGearUser login(AeroGearUser user) {
-        loginCredentials.setCredential(new UsernamePasswordCredentials(user.getUsername(), new Password(user.getPassword())));
+        credentials.setCredential(new UsernamePasswordCredentials(user.getUsername(), new Password(user.getPassword())));
         identity.login();
         return user;
     }
