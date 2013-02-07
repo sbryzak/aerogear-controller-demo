@@ -10,6 +10,6 @@ import javax.inject.Qualifier;
 @Qualifier
 @Target({ElementType.FIELD, ElementType.METHOD, ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
-public @interface AeroGear {
+public @interface Aerogear {
 
 }
