@@ -17,7 +17,6 @@
 
 package org.jboss.aerogear.controller.demo;
 
-import org.jboss.aerogear.controller.demo.spi.Aerogear;
 import org.picketlink.idm.IdentityManager;
 import org.picketlink.idm.credential.internal.Password;
 import org.picketlink.idm.model.Role;
@@ -35,7 +34,7 @@ import javax.inject.Inject;
 public class PicketLinkLoadUsers {
 
 
-    @Inject @Aerogear
+    @Inject
     private IdentityManager identityManager;
 
     /**
