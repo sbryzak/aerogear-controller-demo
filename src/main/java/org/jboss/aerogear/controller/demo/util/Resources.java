@@ -20,6 +20,8 @@ import javax.enterprise.inject.Produces;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+import org.picketlink.annotations.PicketLink;
+
 /**
  * This class uses CDI to alias Java EE resources, such as the persistence context, to CDI beans
  * <p/>
@@ -38,4 +40,10 @@ public class Resources {
     @Produces
     @PersistenceContext
     private EntityManager entityManager;
+
+    @SuppressWarnings("unused")
+    @Produces
+    @PicketLink
+    @PersistenceContext
+    private EntityManager picketLinkEntityManager;
 }

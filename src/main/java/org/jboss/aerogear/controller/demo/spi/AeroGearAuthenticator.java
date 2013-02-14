@@ -4,8 +4,8 @@ import org.picketlink.authentication.BaseAuthenticator;
 import org.picketlink.credential.internal.DefaultLoginCredentials;
 import org.picketlink.idm.IdentityManager;
 import org.picketlink.idm.credential.Credentials;
-import org.picketlink.idm.credential.internal.Password;
-import org.picketlink.idm.credential.internal.UsernamePasswordCredentials;
+import org.picketlink.idm.credential.Password;
+import org.picketlink.idm.credential.UsernamePasswordCredentials;
 import org.picketlink.idm.model.User;
 
 import javax.inject.Inject;

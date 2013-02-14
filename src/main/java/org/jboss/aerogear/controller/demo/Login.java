@@ -17,17 +17,16 @@
 
 package org.jboss.aerogear.controller.demo;
 
-import org.jboss.aerogear.controller.demo.model.AeroGearUser;
-import org.picketlink.Identity;
-import org.picketlink.Identity.AuthenticationResult;
-import org.picketlink.authentication.Authenticator.AuthenticationStatus;
-import org.picketlink.credential.internal.DefaultLoginCredentials;
-import org.picketlink.idm.credential.internal.Password;
-import org.picketlink.idm.credential.internal.UsernamePasswordCredentials;
+import java.util.logging.Logger;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
-import java.util.logging.Logger;
+
+import org.jboss.aerogear.controller.demo.model.AeroGearUser;
+import org.picketlink.Identity;
+import org.picketlink.Identity.AuthenticationResult;
+import org.picketlink.credential.internal.DefaultLoginCredentials;
+import org.picketlink.idm.credential.Password;
 
 @Stateless
 public class Login {
