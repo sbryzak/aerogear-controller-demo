@@ -66,7 +66,7 @@ public class Login {
     }
 
     /**
-     * Update custom attributes to alread logged in user
+     * Update custom attributes to already logged in user
      * On AeroGear we make use of this feature to store OTP secrets for example
      */
     private void updateAttributes() {
