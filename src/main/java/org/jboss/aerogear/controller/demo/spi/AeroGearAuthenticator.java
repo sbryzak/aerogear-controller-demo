@@ -30,7 +30,7 @@ public class AeroGearAuthenticator extends BaseAuthenticator {
 
         if (Credentials.Status.VALID.equals(creds.getStatus())) {
             setStatus(AuthenticationStatus.SUCCESS);
-            setUser((User) credentials.getValidatedAgent());
+            setUser((User) creds.getValidatedAgent());
         } else {
             setStatus(AuthenticationStatus.FAILURE);
         }
