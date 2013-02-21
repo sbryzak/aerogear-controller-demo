@@ -26,7 +26,7 @@ import org.jboss.aerogear.controller.demo.model.AeroGearUser;
 import org.jboss.aerogear.security.otp.api.Base32;
 import org.picketlink.Identity;
 import org.picketlink.Identity.AuthenticationResult;
-import org.picketlink.credential.internal.DefaultLoginCredentials;
+import org.picketlink.credential.DefaultLoginCredentials;
 import org.picketlink.idm.IdentityManager;
 import org.picketlink.idm.credential.Password;
 import org.picketlink.idm.model.Attribute;
