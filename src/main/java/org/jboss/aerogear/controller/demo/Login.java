@@ -30,7 +30,6 @@ import org.picketlink.credential.internal.DefaultLoginCredentials;
 import org.picketlink.idm.IdentityManager;
 import org.picketlink.idm.credential.Password;
 import org.picketlink.idm.model.Attribute;
-import org.picketlink.idm.model.SimpleRole;
 import org.picketlink.idm.model.User;
 
 @Stateless
@@ -57,7 +56,6 @@ public class Login {
         credentials.setCredential(new Password(user.getPassword()));
         if (AuthenticationResult.SUCCESS == identity.login()) {
 
-            checkRoles();
             updateAttributes();
 
             return user;
@@ -65,13 +63,6 @@ public class Login {
             throw new RuntimeException("Authentication failed!");
         }
         
-    }
-
-    private void checkRoles() {
-        boolean hasRoles = identityManager.hasRole(identity.getUser(), new SimpleRole("admin"));
-        System.out.println("HAS ROLES? " + hasRoles);
-        if(!hasRoles)
-            throw new RuntimeException("Sorry bro, your not allowed here!");
     }
 
     /**
