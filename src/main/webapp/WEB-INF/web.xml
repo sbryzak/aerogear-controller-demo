@@ -33,6 +33,6 @@
     </filter>
     <filter-mapping>
         <filter-name>AuthenticationFilter</filter-name>
-        <url-pattern>/basic/*</url-pattern>
+        <url-pattern>/cars/*</url-pattern>
     </filter-mapping>
 </web-app>

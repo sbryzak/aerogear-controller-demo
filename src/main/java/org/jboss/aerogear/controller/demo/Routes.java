@@ -19,6 +19,7 @@ package org.jboss.aerogear.controller.demo;
 import org.jboss.aerogear.controller.demo.model.AeroGearUser;
 import org.jboss.aerogear.controller.router.AbstractRoutingModule;
 import org.jboss.aerogear.controller.router.RequestMethod;
+import org.jboss.aerogear.controller.router.rest.pagination.PaginationInfo;
 
 /**
  * Routes are the core of aerogear-controller–demo.
@@ -54,6 +55,12 @@ public class Routes extends AbstractRoutingModule {
                 .from("/logout")
                 .on(RequestMethod.GET)
                 .to(Login.class).logout();
+
+        route()
+                .from("/cars")
+                .on(RequestMethod.GET)
+                .produces(JSON)
+                .to(Cars.class).getCars();
 
     }
 }
