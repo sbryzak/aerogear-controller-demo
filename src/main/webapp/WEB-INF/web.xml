@@ -28,7 +28,7 @@
         <filter-class>org.picketlink.authentication.web.AuthenticationFilter</filter-class>
         <init-param>
             <param-name>authType</param-name>
-            <param-value>BASIC</param-value>
+            <param-value>DIGEST</param-value>
         </init-param>
     </filter>
     <filter-mapping>
