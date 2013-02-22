@@ -17,11 +17,6 @@
 
 package org.jboss.aerogear.controller.demo;
 
-import java.util.logging.Logger;
-
-import javax.ejb.Stateless;
-import javax.inject.Inject;
-
 import org.jboss.aerogear.controller.demo.model.AeroGearUser;
 import org.jboss.aerogear.security.otp.api.Base32;
 import org.picketlink.Identity;
@@ -31,6 +26,10 @@ import org.picketlink.idm.IdentityManager;
 import org.picketlink.idm.credential.Password;
 import org.picketlink.idm.model.Attribute;
 import org.picketlink.idm.model.User;
+
+import javax.ejb.Stateless;
+import javax.inject.Inject;
+import java.util.logging.Logger;
 
 @Stateless
 public class Login {
@@ -62,7 +61,7 @@ public class Login {
         } else {
             throw new RuntimeException("Authentication failed!");
         }
-        
+
     }
 
     /**
