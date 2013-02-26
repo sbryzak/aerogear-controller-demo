@@ -18,6 +18,7 @@
 package org.jboss.aerogear.controller.demo;
 
 import org.picketlink.idm.IdentityManager;
+import org.picketlink.idm.credential.Digest;
 import org.picketlink.idm.credential.Password;
 import org.picketlink.idm.model.Role;
 import org.picketlink.idm.model.SimpleRole;
@@ -49,13 +50,20 @@ public class PicketLinkLoadUsers {
         user.setEmail("john@doe.com");
         user.setFirstName("John");
         user.setLastName("Doe");
+        // Updates the DIGEST credential for the given user.
+        Digest digestPassword = new Digest();
+
+        digestPassword.setRealm("PicketLink Default Realm");
+        digestPassword.setUsername(user.getLoginName());
+        digestPassword.setPassword(String.valueOf("123"));
 
         /*
          * Note: Password will be encoded in SHA-512 with SecureRandom-1024 salt
          * See http://lists.jboss.org/pipermail/security-dev/2013-January/000650.html for more information
          */
         this.identityManager.add(user);
-        this.identityManager.updateCredential(user, new Password("123"));
+
+        identityManager.updateCredential(user, digestPassword);
 
         Role roleDeveloper = new SimpleRole("simple");
         Role roleAdmin = new SimpleRole("admin");
@@ -65,6 +73,10 @@ public class PicketLinkLoadUsers {
 
         identityManager.grantRole(user, roleDeveloper);
         identityManager.grantRole(user, roleAdmin);
+
+
+
+
 
     }
 
